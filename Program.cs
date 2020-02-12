@@ -7,8 +7,37 @@ namespace DeckShuffler
   {
     static void Main(string[] args)
     {
+      string userInput;
+      // /********************** CREATING THE PLAYERS ***************************/
+      // var players = new List<string>();
+      // string userInput;
 
-      /****** CREATING THE DECK *******/
+      // //Ask players to enter their name and create an empty list named {name}Hand
+      // do
+      // {
+      //   Console.WriteLine("Please enter the players name and hit enter, type 'done' when done");
+      //   userInput = Console.ReadLine().ToLower();
+
+      //   if (userInput != "done")
+      //   {
+      //     Console.WriteLine($"Welcome {userInput}");
+      //     players.Add(userInput);
+      //   }
+
+      // } while (userInput != "done");
+
+      // /********************** CREATING THE PLAYER HANDS ***************************/
+      // Dictionary<string, List<string>> playerRef = new Dictionary<string, List<string>>();
+      // for (var i = 0; i < players.Count; i++)
+      // {
+      //   playerRef.Add(players[i],new List<string>());
+      // }
+
+
+
+     /********************** CREATING THE DECK ***************************/
+      var playerHand = new List<string>();
+
       var deck = new List<string>();
       var suits = new List<string>() { "Hearts", "Clubs", "Spades", "Diamonds" };
       var cardValues = new List<string>() { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
@@ -24,7 +53,7 @@ namespace DeckShuffler
 
 
 
-      /****** SHUFFLING THE DECK *******/
+      /********************** SHUFFLING THE DECK ***************************/
       var shuffledDeck = new List<string>();
       Random r = new Random();
 
@@ -47,23 +76,36 @@ namespace DeckShuffler
 
 
 
-      /****** SHOWING THE DECK *******/
+       /********************** SHOWING THE DECK ***************************/
       //  After the deck is shuffled, display the top card.
       Console.WriteLine($"You've drawn a {shuffledDeck[0]}");
-      string userInput;
+      playerHand.Add(shuffledDeck[0]);
+
       var x = 1;
 
+
       //  Give the user an option to see the next card or quit the program.
-      do {
+      do
+      {
         Console.WriteLine("To draw a card type hit enter type 'q' to quit");
         userInput = Console.ReadLine().ToLower();
 
         if (userInput != "")
-        return;
+          return;
 
-        Console.WriteLine(shuffledDeck[x]);
+        Console.WriteLine($"You've drawn a {shuffledDeck[x]}");
+        playerHand.Add(shuffledDeck[x]);
         x++;
+
+        //Check each card in the deck
+        Console.WriteLine("Your hand:");
+        for (var i = 0; i < playerHand.Count; i++)
+        {
+          Console.WriteLine(playerHand[i]);
+        }
       } while (userInput == "");
+
+
     }
   }
 }
