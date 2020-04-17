@@ -1,19 +1,10 @@
-# Deck Shuffler
-
-A console app that creates and shuffles a new deck for you to draw from and keeps track fo your hand. This app includes:
-
-- [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
-
-- classes with methods
-
-```C#
-  namespace DeckShuffler
+namespace DeckShuffler
 {
   public class Card
   {
     // rank
     public string Rank { get; set; }
-    // suit
+    // suit 
     public string Suit { get; set; }
     // color
     public string Color { get; set; }
@@ -26,7 +17,7 @@ A console app that creates and shuffles a new deck for you to draw from and keep
 
     public int GetCardValue()
     {
-      if (Rank.ToLower() == "ace") {
+      if (Rank.ToLower() == "ace") { 
           return 11;
       } else if (Rank.ToLower() == "queen" || Rank.ToLower() == "king" || Rank.ToLower() == "jack"){
           return 10;
@@ -36,8 +27,3 @@ A console app that creates and shuffles a new deck for you to draw from and keep
     }
   }
 }
-```
-
-## App In Action
-
-![recordit](http://g.recordit.co/day0eoU8QH.gif)
