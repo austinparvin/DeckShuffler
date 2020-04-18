@@ -1,10 +1,14 @@
 # Deck Shuffler
 
-A console app that creates and shuffles a new deck for you to draw from and keeps track fo your hand. This app includes:
+A console app that creates and shuffles a new deck for you to draw from and keeps track fo your hand.
+
+## Includes:
 
 - [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
-
 - classes with methods
+
+# Featured Code
+## Class With Methods
 
 ```C#
   namespace DeckShuffler
